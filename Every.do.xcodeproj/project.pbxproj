@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9617A04F1A79901700EAB38A /* ToDoListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9617A04E1A79901700EAB38A /* ToDoListItem.m */; };
 		96E7F4E11A797DE80066CF16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E7F4E01A797DE80066CF16 /* main.m */; };
 		96E7F4E41A797DE80066CF16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E7F4E31A797DE80066CF16 /* AppDelegate.m */; };
 		96E7F4E71A797DE80066CF16 /* ToDoItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E7F4E61A797DE80066CF16 /* ToDoItemViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9617A04D1A79901700EAB38A /* ToDoListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToDoListItem.h; path = ../ToDoListItem.h; sourceTree = "<group>"; };
+		9617A04E1A79901700EAB38A /* ToDoListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToDoListItem.m; path = ../ToDoListItem.m; sourceTree = "<group>"; };
 		96E7F4DB1A797DE70066CF16 /* Every.do.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Every.do.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E7F4DF1A797DE80066CF16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96E7F4E01A797DE80066CF16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 			children = (
 				96E7F4E21A797DE80066CF16 /* AppDelegate.h */,
 				96E7F4E31A797DE80066CF16 /* AppDelegate.m */,
+				9617A04D1A79901700EAB38A /* ToDoListItem.h */,
+				9617A04E1A79901700EAB38A /* ToDoListItem.m */,
 				96E7F4E51A797DE80066CF16 /* ToDoItemViewController.h */,
 				96E7F4E61A797DE80066CF16 /* ToDoItemViewController.m */,
 				96E7F4E81A797DE80066CF16 /* Main.storyboard */,
@@ -221,6 +226,7 @@
 			files = (
 				96E7F4E71A797DE80066CF16 /* ToDoItemViewController.m in Sources */,
 				96E7F4E41A797DE80066CF16 /* AppDelegate.m in Sources */,
+				9617A04F1A79901700EAB38A /* ToDoListItem.m in Sources */,
 				96E7F4E11A797DE80066CF16 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

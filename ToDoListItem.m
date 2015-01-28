@@ -1,16 +1,13 @@
 //
-//  ViewController.h
+//  ToDoListItem.m
 //  Every.do
 //
 //  Created by Calvin Nisbet on 2015-01-28.
 //  Copyright (c) 2015 Calvin Nisbet. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ToDoListItem.h"
 
-
-@interface ToDoItemViewController : UITableViewController
-
+@implementation ToDoListItem
 
 @end
-

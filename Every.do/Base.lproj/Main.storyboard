@@ -19,18 +19,18 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aiX-Dc-msD" id="ZnJ-bT-0ah">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Checklist Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voz-Sl-Fr0">
-                                            <rect key="frame" x="58" y="11" width="484" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checklist Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voz-Sl-Fr0">
+                                            <rect key="frame" x="58" y="11" width="447" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="centerX" secondItem="Voz-Sl-Fr0" secondAttribute="centerX" id="9Wc-j3-xmi"/>
+                                        <constraint firstAttribute="centerX" secondItem="Voz-Sl-Fr0" secondAttribute="centerX" constant="-1" id="9Wc-j3-xmi"/>
                                         <constraint firstAttribute="centerY" secondItem="Voz-Sl-Fr0" secondAttribute="centerY" id="Ctu-5S-eOI"/>
                                         <constraint firstItem="Voz-Sl-Fr0" firstAttribute="leading" secondItem="ZnJ-bT-0ah" secondAttribute="leadingMargin" constant="50" id="WOR-qQ-4lw"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Voz-Sl-Fr0" secondAttribute="trailing" constant="50" id="aqh-K3-o9U"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Voz-Sl-Fr0" secondAttribute="trailing" constant="48" id="aqh-K3-o9U"/>
                                         <constraint firstItem="Voz-Sl-Fr0" firstAttribute="top" secondItem="ZnJ-bT-0ah" secondAttribute="top" id="dy1-By-eKY"/>
                                     </constraints>
                                     <variation key="default">
