@@ -10,4 +10,11 @@
 
 @implementation ToDoListItem
 
+
+
+-(void)toggleChecked
+{
+    self.checked = !self.checked;
+}
+
 @end

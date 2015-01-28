@@ -17,22 +17,7 @@
 @implementation ToDoItemViewController
 
 {
-
     NSMutableArray *_items;
-
-//    ToDoListItem *_row0item;
-//    ToDoListItem *_row1item;
-//    ToDoListItem *_row2item;
-//    ToDoListItem *_row3item;
-//    ToDoListItem *_row4item;
-//    ToDoListItem *_row5item;
-    
-    BOOL _row0itemChecked;
-    BOOL _row1itemChecked;
-    BOOL _row2itemChecked;
-    BOOL _row3itemChecked;
-    BOOL _row4itemChecked;
-    BOOL _row5itemChecked;
 }
 
 
@@ -76,25 +61,23 @@
     [_items addObject:item];
     
     
-    // Do any additional setup after loading the view, typically from a nib.
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return [_items count];
 }
 
 
--(void)configureCheckmarkForCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+-(void)configureCheckmarkForCell:(UITableViewCell *)cell withToDoListItem:(ToDoListItem *)listItem
 {
-    ToDoListItem *listItem = _items[indexPath.row];
     if (listItem.checked) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
@@ -102,29 +85,46 @@
     }
 }
 
+-(void)configureTextForCell:(UITableViewCell *)cell withToDoListItem:(ToDoListItem *)listItem
+{
+    UILabel *label = (UILabel *)[cell viewWithTag:1000];
+    label.text = listItem.descrip;
+}
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *newCell = [tableView dequeueReusableCellWithIdentifier:@"TodoItem"];
     ToDoListItem *listItem = _items[indexPath.row];
-    UILabel *label = (UILabel *)[newCell viewWithTag:1000];
-    label.text = listItem.descrip;
-    [self configureCheckmarkForCell:newCell atIndexPath:indexPath];
+    [self configureCheckmarkForCell:newCell withToDoListItem:listItem];
+    [self configureTextForCell:newCell withToDoListItem:listItem];
     return newCell;
 }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
     ToDoListItem *listItem = _items[indexPath.row];
+    [listItem toggleChecked];
     listItem.checked = !listItem.checked;
-    [self configureCheckmarkForCell:newCell atIndexPath:indexPath];
+    [self configureCheckmarkForCell:newCell withToDoListItem:listItem];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-
+-(void)addItem
+{
+    NSInteger newRowIndex = [_items count];
+    
+    ToDoListItem *listItem = [[ToDoListItem alloc] init];
+    listItem.descrip = @"";
+    listItem.checked = NO;
+    [_items addObject:listItem];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
+    NSArray *indexPaths = @[indexPath];
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+}
 
 
 @end

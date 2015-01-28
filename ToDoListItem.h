@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *descrip;
 @property (nonatomic) BOOL checked;
+- (void)toggleChecked;
 
 
 
