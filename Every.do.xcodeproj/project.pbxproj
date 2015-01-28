@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		96E7F4E11A797DE80066CF16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E7F4E01A797DE80066CF16 /* main.m */; };
 		96E7F4E41A797DE80066CF16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E7F4E31A797DE80066CF16 /* AppDelegate.m */; };
-		96E7F4E71A797DE80066CF16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E7F4E61A797DE80066CF16 /* ViewController.m */; };
+		96E7F4E71A797DE80066CF16 /* ToDoItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E7F4E61A797DE80066CF16 /* ToDoItemViewController.m */; };
 		96E7F4EA1A797DE80066CF16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E7F4E81A797DE80066CF16 /* Main.storyboard */; };
 		96E7F4EC1A797DE90066CF16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E7F4EB1A797DE90066CF16 /* Images.xcassets */; };
 		96E7F4EF1A797DE90066CF16 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E7F4ED1A797DE90066CF16 /* LaunchScreen.xib */; };
@@ -32,8 +32,8 @@
 		96E7F4E01A797DE80066CF16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96E7F4E21A797DE80066CF16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		96E7F4E31A797DE80066CF16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		96E7F4E51A797DE80066CF16 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		96E7F4E61A797DE80066CF16 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		96E7F4E51A797DE80066CF16 /* ToDoItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoItemViewController.h; sourceTree = "<group>"; };
+		96E7F4E61A797DE80066CF16 /* ToDoItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoItemViewController.m; sourceTree = "<group>"; };
 		96E7F4E91A797DE80066CF16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96E7F4EB1A797DE90066CF16 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96E7F4EE1A797DE90066CF16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -83,8 +83,8 @@
 			children = (
 				96E7F4E21A797DE80066CF16 /* AppDelegate.h */,
 				96E7F4E31A797DE80066CF16 /* AppDelegate.m */,
-				96E7F4E51A797DE80066CF16 /* ViewController.h */,
-				96E7F4E61A797DE80066CF16 /* ViewController.m */,
+				96E7F4E51A797DE80066CF16 /* ToDoItemViewController.h */,
+				96E7F4E61A797DE80066CF16 /* ToDoItemViewController.m */,
 				96E7F4E81A797DE80066CF16 /* Main.storyboard */,
 				96E7F4EB1A797DE90066CF16 /* Images.xcassets */,
 				96E7F4ED1A797DE90066CF16 /* LaunchScreen.xib */,
@@ -219,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96E7F4E71A797DE80066CF16 /* ViewController.m in Sources */,
+				96E7F4E71A797DE80066CF16 /* ToDoItemViewController.m in Sources */,
 				96E7F4E41A797DE80066CF16 /* AppDelegate.m in Sources */,
 				96E7F4E11A797DE80066CF16 /* main.m in Sources */,
 			);
@@ -412,6 +412,7 @@
 				96E7F5001A797DE90066CF16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96E7F5011A797DE90066CF16 /* Build configuration list for PBXNativeTarget "Every.doTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +421,7 @@
 				96E7F5031A797DE90066CF16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
