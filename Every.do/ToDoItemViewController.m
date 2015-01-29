@@ -135,7 +135,7 @@
     
     NSArray *indexPaths = @[indexPath];
     [tableView deleteRowsAtIndexPaths:indexPaths
-                     withRowAnimation:UITableViewRowAnimationAutomatic];
+                     withRowAnimation:UITableViewRowAnimationAutomatic];    
 
 }
 

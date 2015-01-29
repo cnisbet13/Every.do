@@ -14,7 +14,7 @@
 
 -(void)toggleChecked
 {
-    self.checked = !self.checked;
+    self.checked != self.checked;
 }
 
 @end
