@@ -6,18 +6,25 @@
 //  Copyright (c) 2015 Calvin Nisbet. All rights reserved.
 //
 
-#import "AddItemViewController.h"
+#import "ItemDetailViewController.h"
+#import "ToDoListItem.h"
 
-@interface AddItemViewController ()
+@interface ItemDetailViewController ()
 
 @end
 
-@implementation AddItemViewController
+@implementation ItemDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+    
+    
+    if (self.itemEdit !=nil) {
+        self.title = @"Edit Item";
+        self.textField.text = self.itemEdit.descrip;
+        self.doneBarButton.enabled = YES;
+    }
+  }
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -38,13 +45,21 @@
 
 -(IBAction)cancel
 {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate addItemViewControllerDidCancel:self];
 }
 
 -(IBAction)done
 {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"I wrote this mf: %@", self.textField.text);
+    if (self.itemEdit == nil) {
+        ToDoListItem *listItem = [[ToDoListItem alloc] init];
+        listItem.descrip = self.textField.text;
+        listItem.checked = NO;
+        [self.delegate addItemViewController:self didFinishingAddingItem:listItem];
+    } else {
+        self.itemEdit.descrip = self.textField.text;
+        [self.delegate addItemViewController:self didFinishingEditingItem:self.itemEdit];
+    }
+    
 }
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath

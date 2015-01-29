@@ -8,6 +8,7 @@
 
 #import "ToDoItemViewController.h"
 #import "ToDoListItem.h"
+#import "ItemDetailViewController.h"
 
 
 
@@ -79,10 +80,12 @@
 
 -(void)configureCheckmarkForCell:(UITableViewCell *)cell withToDoListItem:(ToDoListItem *)listItem
 {
+    UILabel *label = (UILabel *)[cell viewWithTag:1001];
+    
     if (listItem.checked) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        label.text = @"√";
     } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        label.text = @"";
     }
 }
 
@@ -113,21 +116,21 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
--(void)addItem
-{
-    NSInteger newRowIndex = [_items count];
-    
-    
-    //Create A New List Item, Add it to the index.
-    ToDoListItem *listItem = [[ToDoListItem alloc] init];
-    listItem.descrip = @"I'm A New List Item.";
-    listItem.checked = YES;
-    [_items addObject:listItem];
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
-    NSArray *indexPaths = @[indexPath];
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-}
+//-(void)addItem
+//{
+//    NSInteger newRowIndex = [_items count];
+//    
+//    
+//    //Create A New List Item, Add it to the index.
+//    ToDoListItem *listItem = [[ToDoListItem alloc] init];
+//    listItem.descrip = @"I'm A New List Item.";
+//    listItem.checked = YES;
+//    [_items addObject:listItem];
+//    
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
+//    NSArray *indexPaths = @[indexPath];
+//    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+//}
 
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -141,6 +144,48 @@
 }
 
 
+-(void)addItemViewControllerDidCancel:(ItemDetailViewController *)controller
+{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+-(void)addItemViewController:(ItemDetailViewController *)controller didFinishingAddingItem:(ToDoListItem *)item
+{
+    NSInteger newRowIndex = [_items count];
+    [_items addObject:item];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
+    NSArray *indexPaths = @[indexPath];
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)addItemViewController:(ItemDetailViewController *)controller didFinishingEditingItem:(ToDoListItem *)item
+{
+    NSInteger index = [_items indexOfObject:item];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    UITableViewCell *newCell = [self.tableView cellForRowAtIndexPath:indexPath];
+    [self configureTextForCell:newCell withToDoListItem:item];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AddItem"]) {
+        UINavigationController *navCon = segue.destinationViewController;
+        ItemDetailViewController *controller = (ItemDetailViewController *) navCon.topViewController;
+        controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"EditItem"]) {
+        UINavigationController *navigation = segue.destinationViewController;
+        ItemDetailViewController *controller = (ItemDetailViewController *)navigation.topViewController;
+        controller.delegate = self;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        controller.itemEdit = _items[indexPath.row];
+    }
+}
 
 
 @end

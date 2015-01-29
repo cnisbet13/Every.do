@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ItemDetailViewController.h"
 
 
-@interface ToDoItemViewController : UITableViewController
-
--(IBAction)addItem;
+@interface ToDoItemViewController : UITableViewController<AddItemViewControllerDelegate>
 
 @end
 
