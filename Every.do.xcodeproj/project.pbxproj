@@ -75,12 +75,11 @@
 		9617A08B1A7ACC7300EAB38A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9617A0881A7ACC6800EAB38A /* AllListsViewController.h */,
-				9617A0891A7ACC6800EAB38A /* AllListsViewController.m */,
 				9617A0501A79B71300EAB38A /* ItemDetailViewController.h */,
 				9617A0511A79B71300EAB38A /* ItemDetailViewController.m */,
 				96E7F4E51A797DE80066CF16 /* ToDoItemViewController.h */,
 				96E7F4E61A797DE80066CF16 /* ToDoItemViewController.m */,
+				9617A0901A7ADA9300EAB38A /* List Section View Controllers */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -94,6 +93,15 @@
 				9617A04E1A79901700EAB38A /* ToDoListItem.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		9617A0901A7ADA9300EAB38A /* List Section View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9617A0881A7ACC6800EAB38A /* AllListsViewController.h */,
+				9617A0891A7ACC6800EAB38A /* AllListsViewController.m */,
+			);
+			name = "List Section View Controllers";
 			sourceTree = "<group>";
 		};
 		96E7F4D21A797DE70066CF16 = {

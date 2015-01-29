@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NewList.h"
+#import "ItemDetailViewController.h"
 
 @interface AllListsViewController : UITableViewController
 

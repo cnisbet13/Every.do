@@ -8,6 +8,8 @@
 
 #import "AllListsViewController.h"
 #import "NewList.h"
+#import "ToDoItemViewController.h"
+
 
 @interface AllListsViewController ()
 
@@ -21,11 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -87,9 +84,20 @@
  
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"ShowToDoList" sender:nil];
+        NewList *toDoList = _lists[indexPath.row];
+    
+    [self performSegueWithIdentifier:@"ShowToDoList" sender:toDoList];
 }
  
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+
+    if([segue.identifier isEqualToString:@"ShowToDoList"]) {
+        ToDoItemViewController *controller = segue.destinationViewController;
+        controller.aList = sender;
+    }
+}
+                             
 
 @end
