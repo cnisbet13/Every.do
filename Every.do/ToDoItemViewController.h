@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "ItemDetailViewController.h"
 
+@class NewList;
 
 @interface ToDoItemViewController : UITableViewController<AddItemViewControllerDelegate>
+
+@property (nonatomic, strong) NewList *aList;
 
 @end
 

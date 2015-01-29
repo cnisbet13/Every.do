@@ -20,7 +20,7 @@
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init]) {
-        self.descrip = [aDecoder decodeObjectForKey:@"Text"];
+        self.itemTitle = [aDecoder decodeObjectForKey:@"Text"];
         self.checked = [aDecoder decodeBoolForKey:@"Checked"];
     }
     return self;
@@ -28,7 +28,7 @@
 
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:self.descrip forKey:@"Text"];
+    [aCoder encodeObject:self.itemTitle forKey:@"Text"];
     [aCoder encodeBool:self.checked forKey:@"Checked"];
 }
 

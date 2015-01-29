@@ -9,6 +9,7 @@
 #import "ItemDetailViewController.h"
 #import "ToDoListItem.h"
 
+
 @interface ItemDetailViewController ()
 
 @end
@@ -21,7 +22,7 @@
     
     if (self.itemEdit !=nil) {
         self.title = @"Edit Item";
-        self.textField.text = self.itemEdit.descrip;
+        self.textField.text = self.itemEdit.itemTitle;
         self.doneBarButton.enabled = YES;
     }
   }
@@ -52,11 +53,11 @@
 {
     if (self.itemEdit == nil) {
         ToDoListItem *listItem = [[ToDoListItem alloc] init];
-        listItem.descrip = self.textField.text;
+        listItem.itemTitle = self.textField.text;
         listItem.checked = NO;
         [self.delegate ItemDetailViewController:self didFinishingAddingItem:listItem];
     } else {
-        self.itemEdit.descrip = self.textField.text;
+        self.itemEdit.itemTitle = self.textField.text;
         [self.delegate ItemDetailViewController:self didFinishingEditingItem:self.itemEdit];
     }
     
