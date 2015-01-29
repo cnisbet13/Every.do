@@ -10,6 +10,8 @@
 #import "ToDoListItem.h"
 
 
+
+
 @interface ToDoItemViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @end
@@ -33,7 +35,6 @@
     item.descrip = @"Buy Mowgli’s Tickets";
     item.checked = NO;
     [_items addObject:item];
-    
     
     item = [[ToDoListItem alloc] init];
     item.descrip = @"Get Groceries";

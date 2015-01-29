@@ -62,29 +62,35 @@
         <scene sceneID="Gq6-8K-4zY">
             <objects>
                 <tableViewController id="ly0-qS-16J" customClass="AddItemViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AH1-kY-Cfu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="AH1-kY-Cfu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="xPH-U6-17r">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rvY-Kl-0TO">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="rvY-Kl-0TO">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rvY-Kl-0TO" id="oBd-H9-Son">
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zVE-C0-Rhk">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zVE-C0-Rhk" id="70j-cg-SDA">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LYM-AT-4gT">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LYM-AT-4gT" id="Qsg-LU-E9b">
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the item" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8L3-jg-hdx">
+                                                    <rect key="frame" x="38" y="8" width="524" height="27"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="done" destination="ly0-qS-16J" eventType="editingDidEndOnExit" id="Q4o-qK-sTI"/>
+                                                        <outlet property="delegate" destination="ly0-qS-16J" id="oiN-nr-Txf"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8L3-jg-hdx" secondAttribute="bottom" id="550-qc-B7i"/>
+                                                <constraint firstItem="8L3-jg-hdx" firstAttribute="top" secondItem="oBd-H9-Son" secondAttribute="topMargin" id="Cr1-3V-xC7"/>
+                                                <constraint firstItem="8L3-jg-hdx" firstAttribute="leading" secondItem="oBd-H9-Son" secondAttribute="leadingMargin" constant="30" id="vvm-yi-NIt"/>
+                                                <constraint firstItem="8L3-jg-hdx" firstAttribute="centerX" secondItem="oBd-H9-Son" secondAttribute="centerX" id="w11-ow-AuQ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -107,6 +113,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneBarButton" destination="8zK-2Y-j4g" id="9A7-xx-nG3"/>
+                        <outlet property="textField" destination="8L3-jg-hdx" id="ZDB-7f-iFr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oA-MF-ayI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
