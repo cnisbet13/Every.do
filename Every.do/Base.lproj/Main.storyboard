@@ -18,7 +18,9 @@
                             <outlet property="delegate" destination="zUP-7e-3FY" id="ZwJ-b3-PKv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="To-Do Lists " id="2hX-8x-0XK"/>
+                    <navigationItem key="navigationItem" title="To-Do Lists " id="2hX-8x-0XK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lbb-fA-Itm"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="ltF-Ns-yAM" kind="show" identifier="ShowToDoList" id="4gw-1T-ub5"/>
                     </connections>

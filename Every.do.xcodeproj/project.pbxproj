@@ -11,6 +11,7 @@
 		9617A0521A79B71300EAB38A /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9617A0511A79B71300EAB38A /* ItemDetailViewController.m */; };
 		9617A08A1A7ACC6800EAB38A /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9617A0891A7ACC6800EAB38A /* AllListsViewController.m */; };
 		9617A08E1A7AD16500EAB38A /* NewList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9617A08D1A7AD16500EAB38A /* NewList.m */; };
+		9617A0931A7AF1E900EAB38A /* ListsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9617A0921A7AF1E900EAB38A /* ListsDetailViewController.m */; };
 		96E7F4E11A797DE80066CF16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E7F4E01A797DE80066CF16 /* main.m */; };
 		96E7F4E41A797DE80066CF16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E7F4E31A797DE80066CF16 /* AppDelegate.m */; };
 		96E7F4E71A797DE80066CF16 /* ToDoItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E7F4E61A797DE80066CF16 /* ToDoItemViewController.m */; };
@@ -39,6 +40,8 @@
 		9617A0891A7ACC6800EAB38A /* AllListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllListsViewController.m; path = ../AllListsViewController.m; sourceTree = "<group>"; };
 		9617A08C1A7AD16500EAB38A /* NewList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewList.h; sourceTree = "<group>"; };
 		9617A08D1A7AD16500EAB38A /* NewList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewList.m; sourceTree = "<group>"; };
+		9617A0911A7AF1E900EAB38A /* ListsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsDetailViewController.h; sourceTree = "<group>"; };
+		9617A0921A7AF1E900EAB38A /* ListsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsDetailViewController.m; sourceTree = "<group>"; };
 		96E7F4DB1A797DE70066CF16 /* Every.do.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Every.do.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E7F4DF1A797DE80066CF16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96E7F4E01A797DE80066CF16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,16 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9617A08B1A7ACC7300EAB38A /* View Controllers */ = {
+		9617A08B1A7ACC7300EAB38A /* Checklist View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				9617A0501A79B71300EAB38A /* ItemDetailViewController.h */,
 				9617A0511A79B71300EAB38A /* ItemDetailViewController.m */,
 				96E7F4E51A797DE80066CF16 /* ToDoItemViewController.h */,
 				96E7F4E61A797DE80066CF16 /* ToDoItemViewController.m */,
-				9617A0901A7ADA9300EAB38A /* List Section View Controllers */,
 			);
-			name = "View Controllers";
+			name = "Checklist View Controllers";
 			sourceTree = "<group>";
 		};
 		9617A08F1A7AD82600EAB38A /* Model */ = {
@@ -98,6 +100,8 @@
 		9617A0901A7ADA9300EAB38A /* List Section View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9617A0911A7AF1E900EAB38A /* ListsDetailViewController.h */,
+				9617A0921A7AF1E900EAB38A /* ListsDetailViewController.m */,
 				9617A0881A7ACC6800EAB38A /* AllListsViewController.h */,
 				9617A0891A7ACC6800EAB38A /* AllListsViewController.m */,
 			);
@@ -125,10 +129,9 @@
 		96E7F4DD1A797DE70066CF16 /* Every.do */ = {
 			isa = PBXGroup;
 			children = (
-				96E7F4E21A797DE80066CF16 /* AppDelegate.h */,
-				96E7F4E31A797DE80066CF16 /* AppDelegate.m */,
 				9617A08F1A7AD82600EAB38A /* Model */,
-				9617A08B1A7ACC7300EAB38A /* View Controllers */,
+				9617A0901A7ADA9300EAB38A /* List Section View Controllers */,
+				9617A08B1A7ACC7300EAB38A /* Checklist View Controllers */,
 				96E7F4E81A797DE80066CF16 /* Main.storyboard */,
 				96E7F4EB1A797DE90066CF16 /* Images.xcassets */,
 				96E7F4ED1A797DE90066CF16 /* LaunchScreen.xib */,
@@ -140,6 +143,8 @@
 		96E7F4DE1A797DE80066CF16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				96E7F4E21A797DE80066CF16 /* AppDelegate.h */,
+				96E7F4E31A797DE80066CF16 /* AppDelegate.m */,
 				96E7F4DF1A797DE80066CF16 /* Info.plist */,
 				96E7F4E01A797DE80066CF16 /* main.m */,
 			);
@@ -270,6 +275,7 @@
 				9617A04F1A79901700EAB38A /* ToDoListItem.m in Sources */,
 				9617A0521A79B71300EAB38A /* ItemDetailViewController.m in Sources */,
 				96E7F4E11A797DE80066CF16 /* main.m in Sources */,
+				9617A0931A7AF1E900EAB38A /* ListsDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

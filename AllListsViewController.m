@@ -7,8 +7,8 @@
 //
 
 #import "AllListsViewController.h"
-#import "NewList.h"
 #import "ToDoItemViewController.h"
+#import "NewList.h"
 
 
 @interface AllListsViewController ()
@@ -44,7 +44,7 @@
         [_lists addObject:list];
         
         list = [[NewList alloc] init];
-        list.name = @"New Apps";
+        list.name = @"App Ideas";
         [_lists addObject:list];
         
     }
@@ -79,8 +79,6 @@
     newCell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     return newCell;
 }
-
-
  
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
