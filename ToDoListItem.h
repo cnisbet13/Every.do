@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ToDoListItem : NSObject
+@interface ToDoListItem : NSObject<NSCoding>
 
 @property (nonatomic, strong) NSString *descrip;
 @property (nonatomic) BOOL checked;

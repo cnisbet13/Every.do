@@ -45,7 +45,7 @@
 
 -(IBAction)cancel
 {
-    [self.delegate addItemViewControllerDidCancel:self];
+    [self.delegate ItemDetailViewControllerDidCancel:self];
 }
 
 -(IBAction)done
@@ -54,10 +54,10 @@
         ToDoListItem *listItem = [[ToDoListItem alloc] init];
         listItem.descrip = self.textField.text;
         listItem.checked = NO;
-        [self.delegate addItemViewController:self didFinishingAddingItem:listItem];
+        [self.delegate ItemDetailViewController:self didFinishingAddingItem:listItem];
     } else {
         self.itemEdit.descrip = self.textField.text;
-        [self.delegate addItemViewController:self didFinishingEditingItem:self.itemEdit];
+        [self.delegate ItemDetailViewController:self didFinishingEditingItem:self.itemEdit];
     }
     
 }

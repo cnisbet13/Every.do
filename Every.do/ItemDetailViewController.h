@@ -14,9 +14,9 @@
 
 @protocol AddItemViewControllerDelegate <NSObject>
 
--(void)addItemViewControllerDidCancel: (ItemDetailViewController *)controller;
--(void)addItemViewController: (ItemDetailViewController *)controller didFinishingAddingItem:(ToDoListItem *)item;
--(void)addItemViewController: (ItemDetailViewController *)controller didFinishingEditingItem:(ToDoListItem *)item;
+-(void)ItemDetailViewControllerDidCancel: (ItemDetailViewController *)controller;
+-(void)ItemDetailViewController: (ItemDetailViewController *)controller didFinishingAddingItem:(ToDoListItem *)item;
+-(void)ItemDetailViewController: (ItemDetailViewController *)controller didFinishingEditingItem:(ToDoListItem *)item;
 
 @end
 
