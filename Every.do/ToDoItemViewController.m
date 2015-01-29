@@ -116,15 +116,30 @@
 {
     NSInteger newRowIndex = [_items count];
     
+    
+    //Create A New List Item, Add it to the index.
     ToDoListItem *listItem = [[ToDoListItem alloc] init];
-    listItem.descrip = @"";
-    listItem.checked = NO;
+    listItem.descrip = @"I'm A New List Item.";
+    listItem.checked = YES;
     [_items addObject:listItem];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
     NSArray *indexPaths = @[indexPath];
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
 }
+
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_items removeObjectAtIndex:indexPath.row];
+    
+    NSArray *indexPaths = @[indexPath];
+    [tableView deleteRowsAtIndexPaths:indexPaths
+                     withRowAnimation:UITableViewRowAnimationAutomatic];
+
+}
+
+
 
 
 @end
