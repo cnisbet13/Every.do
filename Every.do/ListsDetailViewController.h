@@ -31,6 +31,12 @@
 
 @property (nonatomic, strong) IBOutlet UITextField *textField;
 
+@property (nonatomic, weak) id <ListsDetailViewControllerDelegate> delegate;
+
+@property (nonatomic, strong) ToDoListItem *toDoListToEdit;
+
+-(IBAction)cancel;
+-(IBAction)done;
 
 
 @end

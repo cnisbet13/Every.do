@@ -11,7 +11,9 @@
 @interface ToDoListItem : NSObject<NSCoding>
 
 @property (nonatomic, strong) NSString *itemTitle;
+
 @property (nonatomic) BOOL checked;
+
 - (void)toggleChecked;
 
 
