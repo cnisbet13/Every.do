@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ToDoListItem.h"
+#import "AllListsViewController.h"
+#import "ItemDetailViewController.h"
 
 @class ListsDetailViewController;
 @class ToDoListItem;

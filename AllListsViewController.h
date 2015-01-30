@@ -10,6 +10,8 @@
 #import "NewList.h"
 #import "ItemDetailViewController.h"
 
-@interface AllListsViewController : UITableViewController
+
+@interface AllListsViewController : UITableViewController <ListsDetailViewControllerDelegate>
+
 
 @end

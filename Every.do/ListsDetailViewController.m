@@ -7,7 +7,8 @@
 //
 
 #import "ListsDetailViewController.h"
-#import "ToDoListItem.h"
+
+
 
 @interface ListsDetailViewController ()
 
@@ -87,6 +88,26 @@
 //    
 //    return 0;
 //}
+
+-(void)listDetailViewControllerDidCancel: (ListsDetailViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)listDetailViewController: (ListsDetailViewController *)controller didFinishingAddingItem:(ToDoListItem *)item
+{
+    NSInteger newRowIndex = [_lists count];
+    [_lists addObject:item];
+    
+    
+}
+
+
+-(void)listDetailViewController: (ListsDetailViewController *)controller didFinishingEditingItem:(ToDoListItem *)item
+{
+    
+}
+
 
 
 @end

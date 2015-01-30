@@ -9,6 +9,7 @@
 #import "AllListsViewController.h"
 #import "ToDoItemViewController.h"
 #import "NewList.h"
+#import "ListsDetailViewController.h"
 
 
 @interface AllListsViewController ()
@@ -94,8 +95,18 @@
     if([segue.identifier isEqualToString:@"ShowToDoList"]) {
         ToDoItemViewController *controller = segue.destinationViewController;
         controller.aList = sender;
+    } else if ([segue.identifier isEqualToString:@"AddToDoList"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        ListsDetailViewController *controller = (ListsDetailViewController *) navController.topViewController;
+        controller.delegate = self;
+        //
+ //
     }
 }
+
+
+
+
                              
 
 @end
