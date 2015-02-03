@@ -12,11 +12,11 @@
 @class ItemDetailViewController;
 @class ToDoListItem;
 
-@protocol AddItemViewControllerDelegate <NSObject>
+@protocol ItemDetailViewControllerDelegate <NSObject>
 
 -(void)ItemDetailViewControllerDidCancel: (ItemDetailViewController *)controller;
--(void)ItemDetailViewController: (ItemDetailViewController *)controller didFinishingAddingItem:(ToDoListItem *)item;
--(void)ItemDetailViewController: (ItemDetailViewController *)controller didFinishingEditingItem:(ToDoListItem *)item;
+-(void)ItemDetailViewController: (ItemDetailViewController *)controller didFinishAddingItem:(ToDoListItem *)item;
+-(void)ItemDetailViewController: (ItemDetailViewController *)controller didFinishEditingItem:(ToDoListItem *)item;
 
 @end
 
@@ -24,7 +24,7 @@
 
 @property (nonatomic, weak) ToDoListItem *itemEdit;
 
-@property (weak, nonatomic) id <AddItemViewControllerDelegate> delegate;
+@property (weak, nonatomic) id <ItemDetailViewControllerDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
 

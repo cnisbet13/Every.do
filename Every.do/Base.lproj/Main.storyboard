@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CFM-i2-agS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CFM-i2-agS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -36,7 +36,7 @@
         <!--To-Do List-->
         <scene sceneID="xu7-C3-z7a">
             <objects>
-                <tableViewController id="ltF-Ns-yAM" customClass="ToDoItemViewController" sceneMemberID="viewController">
+                <tableViewController id="ltF-Ns-yAM" customClass="ChecklistsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qbL-Ai-u0u">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +86,7 @@
                     <navigationItem key="navigationItem" title="To-Do List" id="vfN-7s-6B4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LQP-zF-eTX">
                             <connections>
-                                <segue destination="pyU-dF-XRo" kind="presentation" identifier="AddItem" id="7ib-yq-7Fe"/>
+                                <segue destination="pyU-dF-XRo" kind="show" identifier="AddChecklist" id="7ib-yq-7Fe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -214,7 +214,7 @@
         <!--New List-->
         <scene sceneID="3Df-p8-hp9">
             <objects>
-                <tableViewController id="GHN-z3-wph" customClass="ListsDetailViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ListNavigationController" id="GHN-z3-wph" customClass="ListsDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Wch-wc-H9k">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,7 +267,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="doneBarButton" destination="wIi-OF-acX" id="nIE-g7-Jxp"/>
                         <outlet property="doneButton" destination="wIi-OF-acX" id="Ozi-La-la8"/>
                         <outlet property="textField" destination="xS2-xK-Qz6" id="RqS-3Y-fd8"/>
                     </connections>
@@ -278,6 +277,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="I8p-7U-3ot"/>
+        <segue reference="7ib-yq-7Fe"/>
     </inferredMetricsTieBreakers>
 </document>

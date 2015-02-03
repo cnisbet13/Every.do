@@ -10,20 +10,17 @@
 #import "ToDoListItem.h"
 #import "AllListsViewController.h"
 #import "ItemDetailViewController.h"
+#import "Checklist.h"
 
 @class ListsDetailViewController;
-@class ToDoListItem;
+@class Checklist;
 
 @protocol ListsDetailViewControllerDelegate <NSObject>
 
 
--(void)listDetailViewControllerDidCancel: (ListsDetailViewController *)controller;
-
--(void)listDetailViewController: (ListsDetailViewController *)controller didFinishingAddingItem:(ToDoListItem *)item;
-
-
--(void)listDetailViewController: (ListsDetailViewController *)controller didFinishingEditingItem:(ToDoListItem *)item;
-
+- (void)listDetailViewControllerDidCancel: (ListsDetailViewController *)controller;
+- (void)listDetailViewController: (ListsDetailViewController *)controller didFinishAddingChecklist:(Checklist *)checklist;
+- (void)listDetailViewController: (ListsDetailViewController *)controller didFinishEditingChecklist:(Checklist *)checklist;
 
 @end
 
@@ -31,12 +28,11 @@
 @interface ListsDetailViewController : UITableViewController<UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneButton;
-
 @property (nonatomic, strong) IBOutlet UITextField *textField;
 
 @property (nonatomic, weak) id <ListsDetailViewControllerDelegate> delegate;
 
-@property (nonatomic, strong) ToDoListItem *toDoListToEdit;
+@property (nonatomic, strong) Checklist *checklistToEdit;
 
 -(IBAction)cancel;
 -(IBAction)done;

@@ -12,6 +12,8 @@
 	<dict>
 		<key>1D39865CA9A9C9456306FD5C3A5BF3D460C4D0EB</key>
 		<string>https://github.com/cnisbet13/Every.do.git</string>
+		<key>8F41B4E3B45357F56988EF89B83EB7E9F4DBA817</key>
+		<string>https://github.com/cnisb044/Bill-Splitter.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Every.do.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>1D39865CA9A9C9456306FD5C3A5BF3D460C4D0EB</key>
 		<string>../..</string>
+		<key>8F41B4E3B45357F56988EF89B83EB7E9F4DBA817</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/cnisbet13/Every.do.git</string>
@@ -28,6 +32,14 @@
 	<string>1D39865CA9A9C9456306FD5C3A5BF3D460C4D0EB</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8F41B4E3B45357F56988EF89B83EB7E9F4DBA817</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

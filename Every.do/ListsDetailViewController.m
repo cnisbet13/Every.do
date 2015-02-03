@@ -7,8 +7,7 @@
 //
 
 #import "ListsDetailViewController.h"
-
-
+#import "Checklist.h"
 
 @interface ListsDetailViewController ()
 
@@ -16,12 +15,21 @@
 
 @implementation ListsDetailViewController
 
+-(id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        //
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (self.toDoListToEdit != nil) {
+    if (self.checklistToEdit != nil) {
         self.title = @"Edit ToDoLists";
-        self.textField.text = self.toDoListToEdit.itemTitle;
+        self.textField.text = self.checklistToEdit.name;
         self.doneButton.enabled = YES;
     }
 }
@@ -33,23 +41,22 @@
     
 }
 
--(void)cancel
+-(IBAction)cancel
 {
     [self.delegate listDetailViewControllerDidCancel:self];
-    
 }
 
 
--(void)done
+-(IBAction)done
 {
-    if (self.toDoListToEdit == nil) {
-        ToDoListItem *toDoItem = [[ToDoListItem alloc] init];
-        toDoItem.itemTitle = self.textField.text;
-        [self.delegate listDetailViewController:self didFinishingAddingItem:toDoItem];
+    if (self.checklistToEdit == nil) {
+        Checklist *toDoItem = [[Checklist alloc] init];
+        toDoItem.name = self.textField.text;
+        [self.delegate listDetailViewController:self didFinishAddingChecklist:toDoItem];
     } else
     {
-        self.toDoListToEdit.itemTitle = self.textField.text;
-        [self.delegate listDetailViewController:self didFinishingEditingItem:self.toDoListToEdit];
+        self.checklistToEdit.name = self.textField.text;
+        [self.delegate listDetailViewController:self didFinishEditingChecklist:self.checklistToEdit];
     }
 }
 
@@ -65,8 +72,6 @@
 }
 
 
-
-
 - (BOOL)textField:(UITextField *)theTextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *newDescription = [theTextField.text stringByReplacingCharactersInRange:range withString:string];
@@ -77,36 +82,20 @@
 
 
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    
-//    return 0;
-//}
-
--(void)listDetailViewControllerDidCancel: (ListsDetailViewController *)controller
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    return 1;
 }
 
--(void)listDetailViewController: (ListsDetailViewController *)controller didFinishingAddingItem:(ToDoListItem *)item
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger newRowIndex = [_lists count];
-    [_lists addObject:item];
-    
-    
+    return 10;
 }
 
 
--(void)listDetailViewController: (ListsDetailViewController *)controller didFinishingEditingItem:(ToDoListItem *)item
-{
-    
-}
+
+//Something wrong with this method not being able to access the properties
+
 
 
 

@@ -7,7 +7,11 @@
 //
 
 #import "ItemDetailViewController.h"
+#import "Checklist.h"
 #import "ToDoListItem.h"
+
+
+
 
 
 @interface ItemDetailViewController ()
@@ -30,7 +34,9 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     [self.textField becomeFirstResponder];
+    
 }
 
 
@@ -55,10 +61,10 @@
         ToDoListItem *listItem = [[ToDoListItem alloc] init];
         listItem.itemTitle = self.textField.text;
         listItem.checked = NO;
-        [self.delegate ItemDetailViewController:self didFinishingAddingItem:listItem];
+        [self.delegate ItemDetailViewController:self didFinishAddingItem:listItem];
     } else {
         self.itemEdit.itemTitle = self.textField.text;
-        [self.delegate ItemDetailViewController:self didFinishingEditingItem:self.itemEdit];
+        [self.delegate ItemDetailViewController:self didFinishEditingItem:self.itemEdit];
     }
     
 }

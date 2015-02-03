@@ -6,13 +6,14 @@
 //  Copyright (c) 2015 Calvin Nisbet. All rights reserved.
 //
 
-#import "AllListsViewController.h"
-#import "ToDoItemViewController.h"
-#import "NewList.h"
+#import "ChecklistsViewController.h"
+#import "Checklist.h"
 #import "ListsDetailViewController.h"
 
 
-@interface AllListsViewController ()
+@interface AllListsViewController ()<ListsDetailViewControllerDelegate>
+
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -31,20 +32,20 @@
     if ((self = [super initWithCoder:aDecoder])) {
         _lists = [[NSMutableArray alloc] initWithCapacity:20];
         
-        NewList *list;
-        list = [[NewList alloc] init];
+        Checklist *list;
+        list = [[Checklist alloc] init];
         list.name = @"Groceries";
         [_lists addObject:list];
         
-        list = [[NewList alloc] init];
+        list = [[Checklist alloc] init];
         list.name = @"Bucket List";
         [_lists addObject:list];
         
-        list = [[NewList alloc] init];
+        list = [[Checklist alloc] init];
         list.name = @"Errands";
         [_lists addObject:list];
         
-        list = [[NewList alloc] init];
+        list = [[Checklist alloc] init];
         list.name = @"App Ideas";
         [_lists addObject:list];
         
@@ -75,7 +76,7 @@
     if (newCell == nil) {
         newCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Cellidentifier];
     }
-    NewList *newList = _lists[indexPath.row];
+    Checklist *newList = _lists[indexPath.row];
     newCell.textLabel.text = newList.name;
     newCell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     return newCell;
@@ -83,29 +84,69 @@
  
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        NewList *toDoList = _lists[indexPath.row];
-    
+        Checklist *toDoList = _lists[indexPath.row];
+        
     [self performSegueWithIdentifier:@"ShowToDoList" sender:toDoList];
 }
- 
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 
+    //Are these segues duplicates? this and above.
     if([segue.identifier isEqualToString:@"ShowToDoList"]) {
-        ToDoItemViewController *controller = segue.destinationViewController;
+        ChecklistsViewController *controller = segue.destinationViewController;
         controller.aList = sender;
     } else if ([segue.identifier isEqualToString:@"AddToDoList"]) {
         UINavigationController *navController = segue.destinationViewController;
         ListsDetailViewController *controller = (ListsDetailViewController *) navController.topViewController;
         controller.delegate = self;
-        //
- //
+        controller.checklistToEdit = nil;
     }
 }
 
 
+- (void)listDetailViewControllerDidCancel:(ListsDetailViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
+
+- (void)listDetailViewController:
+(ListsDetailViewController *)controller
+        didFinishAddingChecklist:(Checklist *)checklist
+{
+    NSInteger newRowIndex = [_lists count];
+    [_lists addObject:checklist];
+    NSIndexPath *indexPath = [NSIndexPath
+                              indexPathForRow:newRowIndex inSection:0];
+    NSArray *indexPaths = @[indexPath];
+    [self.tableView insertRowsAtIndexPaths:indexPaths
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+}
+
+
+-(void)listDetailViewController:(ListsDetailViewController *)controller didFinishEditingChecklist:(Checklist *)checklist
+{
+    NSInteger index = [_lists indexOfObject:checklist];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.textLabel.text = checklist.name;
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_lists removeObjectAtIndex:indexPath.row];
+    NSArray *indexPaths =@[indexPath];
+    [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+
+}
 
                              
 
